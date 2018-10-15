@@ -8,18 +8,20 @@ TollBooth()
 number_of_cars=0;
 amount_of_money=0;
 }
-double payingCar()
+void payingCar()
 {
 number_of_cars++;
 amount_of_money+=150.50;
 }
-double nopaycar()
+void nopaycar()
 {
 number_of_cars++;
 }
-double display()
+void display()
 {
-return amount_of_money;
+cout<<" amount_of_money="<<amount_of_money<<endl;
+cout<<"number_of_cars="<<number_of_cars<<endl;
+cout<<"loss="<<(number_of_cars*150.50)-amount_of_money<<endl;
 }
 private:
 unsigned int number_of_cars;
@@ -32,10 +34,9 @@ char enter;
 cout<<"enter p,n or q=";
 cin>>enter;
 if(enter=='q')
-{
-double x=cars.display();
-cout<<x<<endl;
+{cars.display();
 }
+
 else
 {
 while(enter!='q')
@@ -59,8 +60,9 @@ cin>>enter;
 }
 cin>>enter;
 }
-double x=cars.display();
-cout<<x<<endl;
+
+cars.display();
+
 }
 
 
